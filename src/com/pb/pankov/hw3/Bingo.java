@@ -36,8 +36,7 @@ public class Bingo {
                 } else if (tries < pcNum) {
                     System.out.println("Не угадал! Мое число больше!");
                 } else {
-                    System.out.println("Ура! Ты угадал число!");
-                    System.out.println("Количество попыток = " + count);
+                    System.out.println("Ура! Ты угадал число c " + count + "й попытки" );
                     break;
                 }
             } catch (Exception e) {
