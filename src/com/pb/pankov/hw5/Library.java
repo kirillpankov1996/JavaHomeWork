@@ -6,7 +6,7 @@ public class Library {
         Book book2 = new Book("Пикник на обочине","Аркадий и Борис Стругацкие","1972");
         Book book3 = new Book("Дары волхвов","О. Генри","1905");
         Reader reader1 = new Reader("Роликов А.Н.","11111","ЭМС13","27.05.1996","+38095123123");
-        Reader reader2 = new Reader("Коньков Л.К.","11112","ЭМС13","13.06.1995","380951231233");
+        Reader reader2 = new Reader("Коньков Л.К.","11112","ЭМС13","13.06.1995","+380951231233");
 
         System.out.println("Перечень книг библиотеки:");
         System.out.println("\t"+book1.getInfo());
