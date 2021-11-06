@@ -1,44 +1,64 @@
 package com.pb.pankov.hw6;
+
 import java.util.Objects;
 
 public class Cat extends Animal {
-    private String wool;
+    private String name;
+    private String collar;
 
-    public Cat(String food, String location, String wool) {
+
+    public Cat(String food, String location, String name, String collar) {
         super(food, location);
-        this.wool = wool;
+        this.name = name;
+        this.collar = collar;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCollar() {
+        return collar;
+    }
+
+    public void setCollar(String collar) {
+        this.collar = collar;
     }
 
     @Override
     public void makeNoise() {
-        System.out.print("Кот ");
         super.makeNoise();
-        System.out.println();
+        System.out.println("Єто " + name + " - " + "шумит");
     }
 
     @Override
     public void eat() {
-        System.out.print("Кот ");
         super.eat();
-        System.out.println();
+        System.out.println("Єто " + name + " - " + "ест");
+    }
+
+    @Override
+    public String toString() {
+        return "Кошка, " +
+                "имя: " + name + " " + "Отличительная черта " +
+                "- одет  " + collar + " Любимая еда: " + getFood() + ". " + "Локация: " + getLocation();
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Cat)) return false;
-        if (!super.equals(o)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Cat cat = (Cat) o;
-        return wool.equals(cat.wool);
+        return Objects.equals(name, cat.name) && Objects.equals(collar, cat.collar);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), wool);
-    }
-
-    @Override
-    public String toString() {
-        return wool.replace(wool.charAt(0), Character.toUpperCase(wool.charAt(0))) + " кот, проживающий в г." + getLocation() + ". Любимое питание: " + getFood();
+        return Objects.hash(name, collar);
     }
 }

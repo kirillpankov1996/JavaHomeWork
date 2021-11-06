@@ -1,27 +1,40 @@
 package com.pb.pankov.hw6;
 
 import java.lang.reflect.Constructor;
-public class VetClinic {
+
+public class VetСlinic {
+
+
     public static void main(String[] args) throws Exception {
-        System.out.println("\"Ветеринарная клиника.\"");
-        Animal[] animals = {new Cat("консервы", "Париж", "длинношерстный"),
-                new Dog("кости", "Киев", true),
-                new Horse("сено", "Мадрид", "зимние")
-        };
 
-        System.out.println("Поступающие пациенты:");
-        for (Animal animal : animals) {
-            System.out.println(animal);
+        Animal[] animal = new Animal[3];
+        animal[0] = new Cat("Вискас", "квартира", "Клара.", " синий ошейник.");
+        animal[1] = new Dog("кости", "гараж", "Бакс.", "сидит на цепи.");
+        animal[2] = new Horse("сено", "хлев", "Буйный.", "красивая грива.");
+
+        System.out.println("Наблюдаемыем животные : ");
+
+        for (int i = 0; i < 3; i++) {
+            animal[i].toString();
+            System.out.println(animal[i]);
         }
 
-        Class clazz = Class.forName("com.pb.kaganovich.hw6.Veterinarian");
-        Object obj = clazz.getConstructor(new Class[]{String.class}).newInstance("Вася Иванов");
-        if (obj instanceof Veterinarian) {
-            System.out.println(obj);
-            for (Animal animal : animals) {
-                ((Veterinarian) obj).treatAnimal(animal);
-            }
+        System.out.println();
+
+        for (int i = 0; i < 3; i++) {
+            animal[i].makeNoise();
+            animal[i].eat();
         }
 
+        System.out.println();
+
+        Class vetClazz = Class.forName("com.pb.pankov.hw6.Veterinarian");
+        Constructor constr = vetClazz.getConstructor(new Class[]{});
+        Object obj = constr.newInstance();
+
+        if (obj instanceof Veterinarian) ;
+        for (int i = 0; i < 3; i++) {
+            ((Veterinarian) obj).treatAnimal(animal[i]);
+        }
     }
 }

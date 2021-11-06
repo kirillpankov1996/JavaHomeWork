@@ -1,26 +1,14 @@
 package com.pb.pankov.hw6;
 
 public class Animal {
-    private String species, food, location;
 
-    public Animal(String species, String food, String location) {
-        this.species = species;
+    private String food;
+    private String location;
+
+    public Animal(String food, String location) {
+
         this.food = food;
         this.location = location;
-    }
-
-    public Animal() {
-        species = "Зверь";
-        food = "трава";
-        location = "суша";
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
     }
 
     public String getFood() {
@@ -40,15 +28,16 @@ public class Animal {
     }
 
     public void makeNoise() {
-        System.out.println(species + " издает звук \"р-р-р-р\".");
+        System.out.println("Какое-то животное шумит");
     }
 
     public void eat() {
-        System.out.println(species + " ест.");
+        System.out.println("Какое-то животное ест");
+
     }
 
     public void sleep() {
-        System.out.println(species + " спит.");
+        System.out.println("Какое-то животное спит");
     }
 
 }
