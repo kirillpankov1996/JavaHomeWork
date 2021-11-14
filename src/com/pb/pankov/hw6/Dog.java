@@ -1,50 +1,27 @@
 package com.pb.pankov.hw6;
 import java.util.Objects;
 
-public class Dog extends Animal {
-    private String chain;
-    private String name;
+public class Dog extends Animal{
+    private String dogBreed;
 
-    public Dog(String food, String location, String name, String chain) {
-        super(food, location);
-        this.name = name;
-        this.chain = chain;
-
+    public String getDogBreed() {
+        return dogBreed;
     }
 
-    public String getChain() {
-        return chain;
+    public void setDogBreed(String dogBreed) {
+        this.dogBreed = dogBreed;
     }
 
-    public void setChain(String chain) {
-        this.chain = chain;
+    public void breed(){
+        System.out.println(name + " породы \"" + dogBreed + "\"");
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
-    public void makeNoise() {
-        super.makeNoise();
-        System.out.println("Єто " + name + "-" + "шумит");
+    public void makeNoise(){
+        System.out.println(name + " Гавкает");
     }
-
     @Override
-    public void eat() {
-        super.eat();
-        System.out.println("Єто " + name + "-" + "ест");
-    }
-
-    @Override
-    public String toString() {
-        return "Собака, " +
-                "имя: " + name + " " + "Отличительная черта " +
-                "-  " + chain + " Любимая еда: " + getFood() + ". " + "Локация: " + getLocation();
+    public void eat(){
+        System.out.println(name + "Грызет");
     }
 
     @Override
@@ -52,11 +29,19 @@ public class Dog extends Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dog dog = (Dog) o;
-        return Objects.equals(chain, dog.chain) && Objects.equals(name, dog.name);
+        return Objects.equals(dogBreed, dog.dogBreed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chain, name);
+        return Objects.hash(dogBreed);
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", dogBreed='" + dogBreed + '\'' +
+                '}';
     }
 }

@@ -2,50 +2,29 @@ package com.pb.pankov.hw6;
 
 import java.util.Objects;
 
-public class Horse extends Animal {
-    private String name;
-    private String griva;
+public class Horse extends Animal{
+    private boolean isHorseshoe;
 
-    public Horse(String food, String location, String name, String griva) {
-        super(food, location);
-        this.name = name;
-        this.griva = griva;
-
+    public boolean isHorseshoe() {
+        return isHorseshoe;
     }
 
-    public String getName() {
-        return name;
+    public void setHorseshoe(boolean horseshoe) {
+        isHorseshoe = horseshoe;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void horseshoe(){
+        if(isHorseshoe == true){
+            System.out.println(name + " подкованная");
+        } System.out.println(name + " неподкованная");
     }
-
-    public String getGriva() {
-        return griva;
-    }
-
-    public void setGriva(String griva) {
-        this.griva = griva;
-    }
-
     @Override
-    public void makeNoise() {
-        super.makeNoise();
-        System.out.println("Єто " + name + " - " + "шумит");
+    public void makeNoise(){
+        System.out.println(name + "Ржет");
     }
-
     @Override
-    public void eat() {
-        super.eat();
-        System.out.println("Єто " + name + " - " + "ест");
-    }
-
-    @Override
-    public String toString() {
-        return "Лошадь, " +
-                "имя: " + name + " " + "Отличительная черта " +
-                "-  " + griva + " Любимая еда: " + getFood() + ". " + "Локация: " + getLocation() ;
+    public void eat(){
+        System.out.println(name + "Жует");
     }
 
     @Override
@@ -53,11 +32,19 @@ public class Horse extends Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Horse horse = (Horse) o;
-        return Objects.equals(name, horse.name) && Objects.equals(griva, horse.griva);
+        return isHorseshoe == horse.isHorseshoe;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, griva);
+        return Objects.hash(isHorseshoe);
+    }
+
+    @Override
+    public String toString() {
+        return "Horse{" +
+                "name='" + name + '\'' +
+                ", isHorseshoe=" + isHorseshoe +
+                '}';
     }
 }

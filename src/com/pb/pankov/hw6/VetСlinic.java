@@ -1,40 +1,37 @@
 package com.pb.pankov.hw6;
 
-import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VetСlinic {
+    public static void main(String[] args) {
+        List<Animal> animals = new ArrayList<>();
 
+        Cat cat = new Cat();
+        cat.setName("Кот");
+        cat.setCoatColor("Рыжий");
+        cat.setFood("Молоко");
+        cat.setLocation("Кухня");
 
-    public static void main(String[] args) throws Exception {
+        Dog dog = new Dog();
+        dog.setName("Собака");
+        dog.setDogBreed("Овчарка");
+        dog.setFood("Кость");
+        dog.setLocation("Будка");
 
-        Animal[] animal = new Animal[3];
-        animal[0] = new Cat("Вискас", "квартира", "Клара.", " синий ошейник.");
-        animal[1] = new Dog("кости", "гараж", "Бакс.", "сидит на цепи.");
-        animal[2] = new Horse("сено", "хлев", "Буйный.", "красивая грива.");
+        Horse horse = new Horse();
+        horse.setName("Лошадь");
+        horse.setHorseshoe(true);
+        horse.setFood("Трава");
+        horse.setLocation("Конюшня");
 
-        System.out.println("Наблюдаемыем животные : ");
+        animals.add(cat);
+        animals.add(dog);
+        animals.add(horse);
 
-        for (int i = 0; i < 3; i++) {
-            animal[i].toString();
-            System.out.println(animal[i]);
-        }
-
-        System.out.println();
-
-        for (int i = 0; i < 3; i++) {
-            animal[i].makeNoise();
-            animal[i].eat();
-        }
-
-        System.out.println();
-
-        Class vetClazz = Class.forName("com.pb.pankov.hw6.Veterinarian");
-        Constructor constr = vetClazz.getConstructor(new Class[]{});
-        Object obj = constr.newInstance();
-
-        if (obj instanceof Veterinarian) ;
-        for (int i = 0; i < 3; i++) {
-            ((Veterinarian) obj).treatAnimal(animal[i]);
+        Veterinarian veterinarian = new Veterinarian();
+        for (Animal a: animals) {
+            veterinarian.treatAnimal(a);
         }
     }
 }
