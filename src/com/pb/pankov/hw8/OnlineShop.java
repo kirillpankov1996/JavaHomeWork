@@ -26,7 +26,7 @@ public class OnlineShop {
                 System.out.println("Попробуйте снова");
             }
         }
-        System.out.println("____________________________");
+        System.out.println("___________________________");
         while (true) {
             System.out.println("Sign In");
             try {

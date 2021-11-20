@@ -25,13 +25,13 @@ public class Auth {
         } else {
             this.login = login;
             this.password = password;
-            System.out.println("***Успешная регистрация***");
+            System.out.println("**Успешная регистрация**");
         }
     }
 
     public void signIn(String login, String password) throws WrongLoginException {
         if (login.equals(this.login) && password.equals(this.password)) {
-            System.out.println("***Успешный вход***");
+            System.out.println("**Успешный вход**");
         } else  {
             throw new WrongLoginException("Неверный логин или пароль");
         }
