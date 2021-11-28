@@ -11,7 +11,7 @@ public class Bingo {
         String answer;
         Scanner scanner = new Scanner(System.in);
         int tries;
-        int pcNum = generateNumber();
+        int pcNum = randomNumber();
         int count = 0;
         System.out.println("Сейчас мы сыграем в игру. Тебе необходимо угадать число, которое я загадаю");
         System.out.println("Число будет находится в диапазоне от 0 до 100");
@@ -53,7 +53,7 @@ public class Bingo {
 
     }
 
-    public static int generateNumber() {
+    public static int randomNumber() {
         return new Random().nextInt(101);
     }
 
