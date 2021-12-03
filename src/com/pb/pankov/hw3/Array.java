@@ -9,7 +9,7 @@ public class Array {
         Scanner console = new Scanner(System.in);
 
         for (int i = 0; i < arrayLength; i++) {
-            System.out.printf("Введите первое %d-е целое число: ", (i + 1));
+            System.out.printf("Введите %d-е целое число: ", (i + 1));
             array[i] = console.nextInt();
 
             if (array[i] > 0) {
