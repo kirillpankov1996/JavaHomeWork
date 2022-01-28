@@ -1,4 +1,4 @@
-package com.pb.lol.EPAM;
+package com.pb.lol.epam;
 import java.util.Scanner;
 import java.util.Arrays;
 public class OptionalTask1 {

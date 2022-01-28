@@ -1,4 +1,4 @@
-package com.pb;
+package com.pb.lol.easy;
 
 import java.util.Random;
 import java.util.Scanner;

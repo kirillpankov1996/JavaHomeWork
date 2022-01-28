@@ -1,4 +1,4 @@
-package com.pb.lol;
+package com.pb.lol.easy;
 
 import java.util.Arrays;
 import java.util.Scanner;

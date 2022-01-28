@@ -1,4 +1,4 @@
-package com.pb.lol;
+package com.pb.lol.easy;
 public class Les11_substring {
     public static void main (String[] args){
 

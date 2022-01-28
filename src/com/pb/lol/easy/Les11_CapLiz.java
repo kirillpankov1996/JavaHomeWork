@@ -1,4 +1,4 @@
-package com.pb.lol;
+package com.pb.lol.easy;
 import java.util.Scanner;
 public class Les11_CapLiz {
     public static void main (String[] args){

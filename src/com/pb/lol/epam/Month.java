@@ -1,5 +1,4 @@
-package com.pb.lol.EPAM;
-import javax.xml.soap.SOAPPart;
+package com.pb.lol.epam;
 import java.util.Scanner;
 public class Month {
     public static void main (String [] args){

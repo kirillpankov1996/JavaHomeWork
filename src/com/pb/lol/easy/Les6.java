@@ -1,4 +1,4 @@
-package com.pb.lol;
+package com.pb.lol.easy;
 import java.util.Scanner;
 public class Les6 {
     public static void main (String[] args){

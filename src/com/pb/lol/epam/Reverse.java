@@ -1,6 +1,4 @@
-package com.pb.lol.EPAM;
-
-import java.util.Scanner;
+package com.pb.lol.epam;
 
 public class Reverse {
     public static void main(String[] args) {
